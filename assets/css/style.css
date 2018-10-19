@@ -1,0 +1,217 @@
+body{
+    background-color: beige;
+}
+#start{
+    background-color: black;
+    border-style: none;
+    color: white;
+    height: 50px;
+    width: 24%;
+}
+
+#contenedor{
+    margin:auto;
+    text-align: center;
+}
+
+#conectados{
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-bottom: 11px;
+}
+
+#textoinicio{
+    font-family: sans-serif;
+    color: burlywood;
+    background: white;
+}
+
+#idnick1{
+    background-color: lightgray;
+    border-style: none;
+    height: 29px;
+    width: 22%;
+    text-align: center;
+    color: black;
+    margin-bottom: 5px;
+}
+
+#idnick2{
+    background-color: lightgray;
+    border-style: none;
+    height: 29px;
+    width: 22%;
+    text-align: center;
+    color: black
+}
+
+#addnick{
+    width: 10%;
+    height: 31px;
+    border-style: none;
+    background-color: black;
+    color: white;
+}
+
+#addnick2{
+    width: 10%;
+    height: 31px;
+    border-style: none;
+    background-color: black;
+    color: white;
+}
+
+#reinicio{
+    background-color: burlywood;
+    width: 157px;
+    height: 33px;
+    border-style: none;
+    margin-top: 17px;
+}
+
+#rock1{
+    background-color: cadetblue;
+    width: 162px;
+    height: 35px;
+    color: white;
+    border: none;
+    margin-right: 5px;
+}
+
+#papel1{
+    background-color: cadetblue;
+    width: 162px;
+    height: 35px;
+    color: white;
+    border: none;
+    margin-right: 5px;
+}
+#tijera1{
+    background-color: cadetblue;
+    width: 162px;
+    height: 35px;
+    color: white;
+    border: none;
+    margin-right: 5px;
+}
+
+
+
+#rock2{
+    background-color: cadetblue;
+    width: 162px;
+    height: 35px;
+    color: white;
+    border: none;
+    margin-right: 5px;
+}
+
+#papel2{
+    background-color: cadetblue;
+    width: 162px;
+    height: 35px;
+    color: white;
+    border: none;
+    margin-right: 5px;
+}
+#tijera2{
+    background-color: cadetblue;
+    width: 162px;
+    height: 35px;
+    color: white;
+    border: none;
+    margin-right: 5px;
+}
+
+#titulo1jugador{
+    font-family: sans-serif;
+    color: blue;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: white;
+}
+#titulo2jugador{
+    font-family: sans-serif;
+    color: green;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: white;
+}
+
+#finaliv{
+    color: grey;
+    font-family: sans-serif;
+    font-size: 27px;
+
+}
+
+#elprimero{
+    color: white;
+    background-color: blue;
+    font-size: 34px;
+}
+
+#elsegundo{
+    color: white;
+    background-color: green;
+    font-size: 34px;
+}
+
+#chat{
+    margin: 0;
+    text-align: center;
+    margin-top: 66px;
+    font-family: sans-serif;
+    background-color: white;
+}
+
+#segundochat{
+
+    width: 50%;
+ 
+    color: green;
+
+    text-align: center;
+    margin: auto;
+}
+
+#primerchat{
+
+    width: 50%;
+    color: blue;
+ 
+    text-align: center;
+    margin: auto;
+}
+
+.espacioescribir{
+    margin-top: 20px;
+    border-style: none;
+    background-color: grey;
+    color: white;
+    height: 36px;
+    text-align: center;
+}
+.espacioescribir{
+    margin-top: 20px;
+    border-style: none;
+    background-color: grey;
+    color: white;
+    height: 36px;
+    text-align: center;
+}
+
+#escribir1{
+    color: white;
+    background-color: black;
+    border: none;
+    height: 38px;
+}
+
+#escribir2{
+    color: white;
+    background-color: black;
+    border: none;
+    height: 38px;
+}

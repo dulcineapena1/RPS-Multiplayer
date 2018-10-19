@@ -6,6 +6,8 @@ function global(){
     empezar.text("CLICK TO START");
     $("#contenedor").html(empezar);
 
+    $("#mensajesenviados").hide();
+
      // Initialize Firebase
         var config = {
         apiKey: "AIzaSyACAcdul3JJP6YS6iAWyGp-3k15VLK_c-U",
@@ -60,6 +62,8 @@ function global(){
 
 
     $("#start").on("click",function(){
+        $("#mensajesenviados").empty();
+        $("#mensajesenviados").show();
         clickstart ++;
         empezar.remove();
         var textoinicio = $("<p id =textoinicio class=parrafo>").text("WRITTE YOUR NICKNAME");
@@ -85,6 +89,10 @@ function global(){
         //boton para reiniciar juego
         var botonreiniciar = $("<button id=reinicio>").text("START AGAIN");
         $("#contenedor").append(botonreiniciar);  
+
+      //  var scoreA = $("<p id=scorea1>").text("POINTS PLAYER FIRST" + score1);
+      //  $("#contenedor").prepend(scoreA); 
+         
 
     }); //fin boton start on click
 
@@ -124,8 +132,8 @@ function global(){
         $("#1contrincante").append(botonrock1,botonpapel1,botontijera1,titulo1jugador);
 
         //parte del chat1
-        var inputescribirmensaje1= $("<input type=text id=escribir1>");
-        var enviarmensaje1=$("<button id=escribir1>").text("MANDAR 1");
+        var inputescribirmensaje1= $("<input type=text id=escribir1 class=espacioescribir>");
+        var enviarmensaje1=$("<button id=escribir1>").text("INSULT YOUR OPONENT");
         $("#chat").append(inputescribirmensaje1, enviarmensaje1);
         
         var mensaje1= $("<p id=mensajedel1>");
@@ -256,8 +264,8 @@ let elresultadoprimero= {
         $("#2contrincante").append(botonrock2,botonpapel2,botontijera2,titulo2jugador);
 
         //parte del chat2
-        var inputescribirmensaje2= $("<input type=text id=escribir2>");
-        var enviarmensaje2=$("<button id=escribir2>").text("MANDAR 2");
+        var inputescribirmensaje2= $("<input type=text id=escribir2 class=espacioescribir>");
+        var enviarmensaje2=$("<button id=escribir2>").text("INSULT YOUR OPONENT");
         $("#chat").append(inputescribirmensaje2, enviarmensaje2);   
         var mensaje2= $("<p id=mensajedel2>");
         $("#mensajesenviados").append(mensaje2);
@@ -288,7 +296,7 @@ let chatparte2={
         cone4.on("child_added", function(snapshot){    
             //enseguida le pongo de id el nombre del jugador, para así poder desplegarlo
             //más abajo en los resultados como id ganador     
-            var espacioparachat2= $("<p id=primerchat class =textoschat>").text(snapshot.val().chateado2);
+            var espacioparachat2= $("<p id=segundochat class =textoschat>").text(snapshot.val().chateado2);
             $("#mensajesenviados").append(espacioparachat2);   
             var dejsonapalabrachat2 = JSON.stringify(snapshot.val().chateado2);
 
@@ -366,6 +374,8 @@ let chatparte2={
     function batalla (){ 
         //muestro el botón de reinicio
         $("#reinicio").show();  
+
+        
             //estoy diciendo si hay datos tanto en la primera base de datos, como en la segunda (en realidad son nodos de una misma base)
             if (elresultadoprimero.tiroprimero && elresultadosegundo.tirosegundo){
                 console.log("batalla2"+elresultadosegundo.tirosegundo);
@@ -376,10 +386,13 @@ let chatparte2={
                     var juntas= nuevauno + nuevados;
                     console.log(nuevados + nuevauno);
                     if (juntas==="PAPERROCK"){  
+                        
                         console.log("El ganador es EL PRIMERO "+ " " + nuevauno);   
                         $("#finaliv").text("The winner is FIRST PLAYER "+ " " + JSON.stringify(nuevauno));
                     }
                     if (juntas==="ROCKPAPER"){
+                     
+                       
                         console.log("El ganador es EL SEGUNDO "+ " " +nuevados);
                         $("#finaliv").text("The winner is SECOND PLAYER "+ " " + JSON.stringify(nuevados));
                     }
@@ -414,7 +427,8 @@ let chatparte2={
                         $("#finaliv").text("The winner is SECOND PLAYER "+ " " + JSON.stringify(nuevados));
                     }           
                         // var variable1 = $(event.target).text();
-                        //  var ganador =$("#resultadosambos p").val()  ;     
+                        //  var ganador =$("#resultadosambos p").val()  ; 
+                           
                 }//cierre if
                 else{
                     $("#finaliv").text("Wait until both press an option" );
