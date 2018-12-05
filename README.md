@@ -1,6 +1,6 @@
 # RPS-Multiplayer
 
-_Two players game: Rock, Paper, Siccsors with a chat part.Data base implementation._
+_Two players game: Rock, Paper, Scissors with a chat part.Data base implementation._
 
 ### To start 📋
 
