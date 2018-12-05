@@ -1,6 +1,4 @@
 # RPS-Multiplayer
-<<<<<<< HEAD
-(September)
 
 _Two players game: Rock, Paper, Siccsors with a chat part.Data base implementation._
 
@@ -24,6 +22,5 @@ _Open index in two different tabs on your browser, so one is going to be first p
 ⌨️ [DulcineaPena1](https://github.com/dulcineapena1) 😊
 
 =======
-Para realizar el juego es necesario abrirlo en dos ventanas, donde una ventana será el jugador 1 y a otra ventana será el jugador 2.
-Ambos resultados se jalan de la misma base de datos.
+
 >>>>>>> 090e29ee6bdfc2aa02e35ba091b041acfecc33cb
