@@ -2,8 +2,10 @@ $(document).ready(function (){
     
 global();
 function global(){
+    $("#chat").hide();
+    $("#resultadosambos").hide();
     var empezar = $("<button id='start' class ='start'>");
-    empezar.text("CLICK TO START");
+    empezar.text("START");
     $("#contenedor").html(empezar);
 
     $("#mensajesenviados").hide();
@@ -48,10 +50,10 @@ function global(){
          aumentarconecciones++;
        // $("#conectados").text("hay conectados" + (snap.numChildren()));
        if (aumentarconecciones ===1 ){
-         $("#conectados").text("YOU ARE THE FIRST PLAYER" + " "  + "CLICK START AND PUT YOUR NAME IN YOUR SPACE");
+         $("#conectados").text("You are the FIRST PLAYER" + " "  + "click start and put your name in your space");
        }
        else {
-        $("#conectados").text("YOU ARE THE SECOND PLAYER" + " "  + "CLICK START AND PUT YOUR NAME IN YOUR SPACE");
+        $("#conectados").text("You are the SECOND PLAYER" + " "  + "click start and put your name in your space");
       }
        
     });
@@ -62,12 +64,13 @@ function global(){
 
 
     $("#start").on("click",function(){
+       
         $("#mensajesenviados").empty();
         $("#mensajesenviados").show();
         clickstart ++;
         empezar.remove();
-        var textoinicio = $("<p id =textoinicio class=parrafo>").text("WRITTE YOUR NICKNAME");
-        $(textoinicio).appendTo("#contenedor");
+        // var textoinicio = $("<p id =textoinicio class=parrafo>").text("WRITTE YOUR NICKNAME");
+        // $(textoinicio).appendTo("#contenedor");
         //estos son los divs en los que voy a organizar la informaciòn de cada oponente
         var info1= $("<div id=1contrincante>");
         var info2= $("<div id=2contrincante>");
@@ -76,22 +79,28 @@ function global(){
 
         var resultadospantalla= $("<div id=finaliv>");
         $("#resultadosambos").append(resultadospantalla);
+        $("#resultadosambos").hide();
 
         var ingresarnick1 = $("<input id=idnick1 type=text placeholder=FIRST>");
         var botonsubmitnick1 =$("<input id=addnick type=submit>");
         var ingresarnick2 = $("<input id=idnick2 type=text placeholder=SECOND>");
-        var botonsubmitnick2 =$("<input id=addnick2 type=submit>");
+        var botonsubmitnick2 =$("<input id=addnick2 type=submit >").html("send");
         
         //ordeno la información en front
         $("#1contrincante").append(ingresarnick1, botonsubmitnick1);
         $("#2contrincante").append(ingresarnick2,botonsubmitnick2);
 
         //boton para reiniciar juego
-        var botonreiniciar = $("<button id=reinicio>").text("START AGAIN");
-        $("#contenedor").append(botonreiniciar);  
+        var botonreiniciar = $("<button id=reinicio>").text("Play again!");
+        $("#contenedor").append(botonreiniciar);
+        $("#reinicio").hide();  
 
-      //  var scoreA = $("<p id=scorea1>").text("POINTS PLAYER FIRST" + score1);
-      //  $("#contenedor").prepend(scoreA); 
+        var scoreA = $("<p id=scorea1>");
+        var scoreB = $("<p id=scorea2>");
+
+        var scorestotal=$("<div id=ree>")
+        $("#contenedor").prepend(scorestotal);
+        $("#ree").prepend(scoreA,scoreB); 
          
 
     }); //fin boton start on click
@@ -104,6 +113,10 @@ function global(){
     
 //--------PRIMER JUGADOR
     $("body").on("click","#addnick", function(){
+        $("#chat").show();
+        $("#resultadosambos").show();
+        $("#conectados").hide();
+        $("#reinicio").show();
         agregado++;
         console.log("este es el agregado  "+ agregado);
         event.preventDefault();             
@@ -128,12 +141,12 @@ function global(){
         var botonrock1 = $("<button id=rock1>").text("ROCK");
         var botonpapel1 = $("<button id=papel1>").text("PAPER");
         var botontijera1 = $("<button id=tijera1>").text("SCISSORS");
-        var titulo1jugador=$("<p id=titulo1jugador>").text("YOU ARE FIRST PLAYER" + "  "+ nick1);
+        var titulo1jugador=$("<p id=titulo1jugador>").text("FIRST PLAYER" + "  "+ nick1);
         $("#1contrincante").append(botonrock1,botonpapel1,botontijera1,titulo1jugador);
 
         //parte del chat1
         var inputescribirmensaje1= $("<input type=text id=escribir1 class=espacioescribir>");
-        var enviarmensaje1=$("<button id=escribir1>").text("INSULT YOUR OPONENT");
+        var enviarmensaje1=$("<button id=escribir1>").text("Send an insult to your oponent");
         $("#chat").append(inputescribirmensaje1, enviarmensaje1);
         
         var mensaje1= $("<p id=mensajedel1>");
@@ -236,6 +249,10 @@ let elresultadoprimero= {
 //----------------------------------------------------------------------------------
 //-------SEGUNDO JUGADOR
      $("body").on("click","#addnick2", function(){
+        $("#chat").show();
+        $("#resultadosambos").show();
+        $("#conectados").hide();
+        $("#reinicio").show();
         agregado++;
         console.log("este es el agregado  "+ agregado);
         event.preventDefault();            
@@ -259,13 +276,13 @@ let elresultadoprimero= {
         var botonrock2 = $("<button id=rock2>").text("ROCK");
         var botonpapel2 = $("<button id=papel2>").text("PAPER");
         var botontijera2 = $("<button id=tijera2>").text("SCISSORS");
-        var titulo2jugador=$("<p id=titulo2jugador>").text("YOU ARE SECOND PLAYER" + "  "+ nick2);
+        var titulo2jugador=$("<p id=titulo2jugador>").text("SECOND PLAYER" + "  "+ nick2);
        
         $("#2contrincante").append(botonrock2,botonpapel2,botontijera2,titulo2jugador);
 
         //parte del chat2
         var inputescribirmensaje2= $("<input type=text id=escribir2 class=espacioescribir>");
-        var enviarmensaje2=$("<button id=escribir2>").text("INSULT YOUR OPONENT");
+        var enviarmensaje2=$("<button id=escribir2>").text("Send an insult to your oponent");
         $("#chat").append(inputescribirmensaje2, enviarmensaje2);   
         var mensaje2= $("<p id=mensajedel2>");
         $("#mensajesenviados").append(mensaje2);
@@ -368,13 +385,15 @@ let chatparte2={
         })
 
 
-
+      //  var score1=null;
+      //  var score2=null;
 
 //---AQUÍ SE CORRE LA COMPARATIVA PARA DELIBERAR GANADOR
     function batalla (){ 
+        
         //muestro el botón de reinicio
         $("#reinicio").show();  
-
+            
         
             //estoy diciendo si hay datos tanto en la primera base de datos, como en la segunda (en realidad son nodos de una misma base)
             if (elresultadoprimero.tiroprimero && elresultadosegundo.tirosegundo){
@@ -386,43 +405,49 @@ let chatparte2={
                     var juntas= nuevauno + nuevados;
                     console.log(nuevados + nuevauno);
                     if (juntas==="PAPERROCK"){  
-                        
+                        // score1++;
+                        // console.log("sss"+score1);
                         console.log("El ganador es EL PRIMERO "+ " " + nuevauno);   
                         $("#finaliv").text("The winner is FIRST PLAYER "+ " " + JSON.stringify(nuevauno));
                     }
                     if (juntas==="ROCKPAPER"){
-                     
-                       
+                        // score2++;
+                        // console.log("sss"+score2);
                         console.log("El ganador es EL SEGUNDO "+ " " +nuevados);
                         $("#finaliv").text("The winner is SECOND PLAYER "+ " " + JSON.stringify(nuevados));
                     }
                     if (juntas==="ROCKROCK"){
-                        console.log("El ganador es EL SEGUNDO "+ " " +nuevados);
-                        $("#finaliv").text("Try again");
+                        
+                        
+                        $("#finaliv").text("Same! Try again!");
                     }
 
                     if (juntas==="PAPERSCISSORS"){  
+                        // score2++;
                         console.log("El ganador es EL SEGUNDO "+ " " +nuevados);   
                         $("#finaliv").text("The winner is SECOND PLAYER "+ " " + JSON.stringify(nuevados));
                     }
                     if (juntas==="SCISSORSPAPER"){
+                        // score1++;
                         console.log("El ganador es EL PRIMERO "+ " " +nuevauno);
                         $("#finaliv").text("The winner is FIRST PLAYER "+ " " + JSON.stringify(nuevauno));
                     }
                     if (juntas==="SCISSORSSCISSORS"){
-                        console.log("El ganador es EL SEGUNDO "+ " " +nuevados);
-                        $("#finaliv").text("Try again");
+                 
+                        $("#finaliv").text("Same! Try again!");
                     }
                     if (juntas==="PAPERPAPER"){
                         console.log("El ganador es EL SEGUNDO "+ " " +nuevados);
-                        $("#finaliv").text("Try again");
+                        $("#finaliv").text("Same! Try again!");
                     }
 
                     if (juntas==="ROCKSCISSORS"){  
+                        // score1++;
                         console.log("El ganador es EL PRIMERO "+ " " +nuevauno); 
                         $("#finaliv").text("The winner is FIRST PLAYER "+ " " + JSON.stringify(nuevauno));  
                     }
                     if (juntas==="SCISSORSROCK"){
+                        // score2++;
                         console.log("El ganador es EL SEGUNDO "+ " " +nuevados);
                         $("#finaliv").text("The winner is SECOND PLAYER "+ " " + JSON.stringify(nuevados));
                     }           
@@ -431,7 +456,7 @@ let chatparte2={
                            
                 }//cierre if
                 else{
-                    $("#finaliv").text("Wait until both press an option" );
+                    $("#finaliv").text("Wait until both play" );
                 }
         
     }//cierre function batalla
@@ -466,8 +491,13 @@ let chatparte2={
             elresultadoprimero.tiroprimero=null;
             elresultadosegundo.tirosegundo=null;
             
+            
+         //  var scoreA= $("<p id=scorea1>").text("POINTS PLAYER ONE" + " "+ score1);
+         //   var scoreB= $("<p id=scorea2>").text("POINTS PLAYER TWO" + " "+  score2);
+         //   $("#ree").text(scoreA , scoreB); 
+            
     }) //cierre onclick reinicio
-
+    
 
 
 

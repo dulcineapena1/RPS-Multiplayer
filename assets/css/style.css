@@ -1,12 +1,22 @@
 body{
     background-color: beige;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    background-color: #3b0047;
+    background-color: #003b63;
+    background-color: #426600;
+    background-color: #b06100;
+background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
 }
+
 #start{
     background-color: black;
     border-style: none;
     color: white;
     height: 50px;
     width: 24%;
+    cursor: pointer;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 24px;
 }
 
 #contenedor{
@@ -19,6 +29,8 @@ body{
     font-weight: bold;
     font-family: sans-serif;
     margin-bottom: 11px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 30px;
 }
 
 #textoinicio{
@@ -35,6 +47,8 @@ body{
     text-align: center;
     color: black;
     margin-bottom: 5px;
+    font-size: 24px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 #idnick2{
@@ -43,7 +57,9 @@ body{
     height: 29px;
     width: 22%;
     text-align: center;
-    color: black
+    color: black;
+    font-size: 24px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 #addnick{
@@ -52,6 +68,7 @@ body{
     border-style: none;
     background-color: black;
     color: white;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 #addnick2{
@@ -60,14 +77,33 @@ body{
     border-style: none;
     background-color: black;
     color: white;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 #reinicio{
-    background-color: burlywood;
+    background-color: white;
     width: 157px;
     height: 33px;
     border-style: none;
     margin-top: 17px;
+    border-width: 4px;
+    border-color: black;
+    border-style: solid;
+    cursor: pointer;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    margin-left: 4%;
+}
+
+#resultadosambos{
+    width: 40%;
+    background-color: darkslategrey;
+    height: 382px;
+    border-radius: 19px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    float: left;
+    padding: 19px;
 }
 
 #rock1{
@@ -77,6 +113,7 @@ body{
     color: white;
     border: none;
     margin-right: 5px;
+    font-family: 'Bungee', cursive;
 }
 
 #papel1{
@@ -86,6 +123,7 @@ body{
     color: white;
     border: none;
     margin-right: 5px;
+    font-family: 'Bungee', cursive;
 }
 #tijera1{
     background-color: cadetblue;
@@ -94,6 +132,7 @@ body{
     color: white;
     border: none;
     margin-right: 5px;
+    font-family: 'Bungee', cursive;
 }
 
 
@@ -105,6 +144,7 @@ body{
     color: white;
     border: none;
     margin-right: 5px;
+    font-family: 'Bungee', cursive;
 }
 
 #papel2{
@@ -114,6 +154,7 @@ body{
     color: white;
     border: none;
     margin-right: 5px;
+    font-family: 'Bungee', cursive;
 }
 #tijera2{
     background-color: cadetblue;
@@ -122,6 +163,7 @@ body{
     color: white;
     border: none;
     margin-right: 5px;
+    font-family: 'Bungee', cursive;
 }
 
 #titulo1jugador{
@@ -129,33 +171,48 @@ body{
     color: blue;
     font-weight: bold;
     font-size: 16px;
-    background-color: white;
+    text-align: left;
+    margin-left: 15%;
+    margin-top: 7%;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 25px;
 }
 #titulo2jugador{
     font-family: sans-serif;
     color: green;
     font-weight: bold;
     font-size: 16px;
-    background-color: white;
+    text-align: left;
+    margin-left: 15%;
+    margin-top: 7%;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 25px;
+    
 }
 
 #finaliv{
     color: grey;
     font-family: sans-serif;
     font-size: 27px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
 
+#mensajesenviados{
+    height: 202px;
 }
 
 #elprimero{
     color: white;
     background-color: blue;
     font-size: 34px;
+    font-family: 'Bungee', cursive;
 }
 
 #elsegundo{
     color: white;
     background-color: green;
     font-size: 34px;
+    font-family: 'Bungee', cursive;
 }
 
 #chat{
@@ -164,6 +221,10 @@ body{
     margin-top: 66px;
     font-family: sans-serif;
     background-color: white;
+    width: 52%;
+    float: right;
+    border-radius: 4%;
+    height: 300px;
 }
 
 #segundochat{
@@ -174,6 +235,8 @@ body{
 
     text-align: center;
     margin: auto;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 24px;
 }
 
 #primerchat{
@@ -183,6 +246,8 @@ body{
  
     text-align: center;
     margin: auto;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 24px;
 }
 
 .espacioescribir{
@@ -204,14 +269,24 @@ body{
 
 #escribir1{
     color: white;
-    background-color: black;
-    border: none;
-    height: 38px;
+    background-color: darkslategrey;
+    border: white;
+    height: 32px;
+    border-width: 3px;
+    border-style: solid;
+    display: inherit;
+    margin: auto;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 #escribir2{
     color: white;
-    background-color: black;
-    border: none;
-    height: 38px;
+    background-color: darkslategrey;
+    border: white;
+    height: 32px;
+    border-width: 3px;
+    border-style: solid;
+    display: inherit;
+    margin: auto;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
